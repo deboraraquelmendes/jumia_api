@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Users</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =================
+             header
+        =================  -->
+  <header>
+
+    <h1>RANDOM USERS API</h1>
+    <div class="header_line"></div>
+    <!-- <input type="radio" name="filter" id="dots-1">
+    <div class="form_filter">
+      <label for="dots-1">
+        <span class="dots one"></span>
+        <span class="filter">ALL</span>
+      </label>
+    </div> -->
+
+
+    <div class="container_gender">
+      <div class="dropdown-title">Gender</div>
+            <div class="select-box">
+              <div class="options-container">
+                <div class="option">
+                  <input
+                    type="radio"
+                    class="radio"
+                    id="feminine"
+                    name="gender"
+                  />
+                  <label for="masculine">Feminine</label>
+                </div>
+      
+                <div class="option">
+                  <input type="radio" class="radio" id="masculine" name="gender" />
+                  <label for="masculine">Masculine</label>
+                </div>
+              </div>
+      
+              <div class="selected">
+                Choose...
+              </div>
+            </div>
+          </div>
+
+    <div class="container_nationality">
+<div class="dropdown-title">Nationality</div>
+      <div class="select-box">
+        <div class="options-container">
+          <div class="option">
+            <input
+              type="radio"
+              class="radio"
+              id="afghanistan"
+              name="nationality"
+            />
+            <label for="afghanistan">Afghanistan</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="albania" name="nationality" />
+            <label for="albania">Albania</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="brazil" name="nationality" />
+            <label for="brazil">Brazil</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="canada" name="nationality" />
+            <label for="canada">Canada</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="egypt" name="nationality" />
+            <label for="egypt">Egypt</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="france" name="nationality" />
+            <label for="france">France</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="lithuania" name="nationality" />
+            <label for="lithuania">Lithuania</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="portugal" name="nationality" />
+            <label for="portugal">Portugal</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="zimbabwe" name="nationality" />
+            <label for="zimbabwe">Zimbabwe</label>
+          </div>
+        </div>
+
+        <div class="selected">
+          Choose...
+        </div>
+      </div>
+    </div>
+
+
+      </div>
+
+    </div>
+
+    <div class="btn">
+      <div class="button" id="button">
+        <input type="submit" value="GET USERS">
+
+      </div>
+      <a href="/index.html" class="clear"></a>
+    </div>
+  </header>
+
+  <!-- =================
+             main
+        =================  -->
+
+  <main>
+    <div id="output"></div>
+    <div class="pagenumbers" id="pagination-wrapper"></div>
+  </main>
+
+  <!-- =================
+             footer
+        =================  -->
+
+  <footer>
+
+
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>

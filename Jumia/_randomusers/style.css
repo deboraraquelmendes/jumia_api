@@ -1,0 +1,360 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+
+/* LATO FONT */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  list-style: none;
+}
+
+:root {
+  --dark: #2f3e46;
+  --mdark: #354f52;
+  --green: #52796f;
+  --mgreen: #84a98c;
+  --mlight: #cad2c5;
+  --light: #f6faf3;
+  --trasparent: #f6faf328;
+}
+
+
+h1 {
+  color: var(--light);
+  font-family: 'Lato', sans-serif;
+  font-size: 2em;
+}
+
+
+
+/* scroll */
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--mlight) var(--light);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--trasparent);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--light);
+  border-radius: 20px;
+  /* border: 3px solid var(--light); */
+}
+
+/* end scroll */
+
+html {
+  width: 100%;
+  /* background-attachment:fixed; */
+  height: 100vh;
+
+  background: rgb(82, 121, 111);
+  background: -moz-linear-gradient(24deg, rgba(82, 121, 111, 1) 0%, rgba(132, 169, 140, 1) 25%, rgba(202, 210, 197, 1) 81%, rgba(246, 250, 243, 1) 99%);
+  background: -webkit-linear-gradient(24deg, rgba(82, 121, 111, 1) 0%, rgba(132, 169, 140, 1) 25%, rgba(202, 210, 197, 1) 81%, rgba(246, 250, 243, 1) 99%);
+  background: linear-gradient(24deg, rgba(82, 121, 111, 1) 0%, rgba(132, 169, 140, 1) 25%, rgba(202, 210, 197, 1) 81%, rgba(246, 250, 243, 1) 99%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#52796f", endColorstr="#f6faf3", GradientType=1);
+}
+
+body {
+  width: 60%;
+  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3%;
+  padding-top: 4%;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+
+  display: flex;
+
+  background: rgba(255, 255, 255, 0.171);
+  box-shadow: 0 8px 32px 0 rgba(82, 121, 111, 0.37);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+header {
+  width: 30%;
+  height: auto;
+  /* margin: 40px auto; */
+  position: relative;
+}
+
+.header_line {
+  margin-top: 10px;
+  width: 80px;
+  height: 3px;
+  background-color: var(--green);
+}
+
+/* dropdown */
+
+.container_gender{
+  margin-top: 40px;
+}
+.dropdown-title{
+  font-family: 'Lato', sans-serif;
+  color: var(--light);
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.container {
+  margin-top: 100px;
+  padding: 32px;
+}
+
+.select-box {
+  display: flex;
+  width: 170px;
+  flex-direction: column;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+}
+
+.select-box .options-container {
+  background: var(--light);
+  color: var(--green);
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  overflow: hidden;
+
+
+
+  order: 1;
+}
+
+.selected {
+  background: var(--light);
+  margin-bottom: 8px;
+  color: var(--green);
+  position: relative;
+
+  order: 0;
+}
+
+.selected::after {
+  content: "";
+
+  background: url("img/down_arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  position: absolute;
+  height: 100%;
+  width: 20px;
+  right: 10px;
+  top: 15px;
+
+  transition: all 0.4s;
+}
+
+.select-box .options-container.active {
+  max-height: 240px;
+  opacity: 1;
+  /* overflow-y: scroll; */
+}
+
+.select-box .options-container.active + .selected::after {
+  transform: rotateX(180deg);
+  top: -15px;
+}
+
+/* scroll */
+
+/* .select-box .options-container::-webkit-scrollbar {
+  width: 8px;
+  background: var(--light);
+  color: var(--green);
+  border-radius: 0 8px 8px 0;
+}
+
+.select-box .options-container::-webkit-scrollbar-thumb {
+  background: var(--green);
+  color: var(--light);
+  border-radius: 0 8px 8px 0;
+} */
+
+.select-box .option,
+.selected {
+  padding: 12px 24px;
+  cursor: pointer;
+}
+
+.select-box .option:hover {
+  background: var(--green);
+  color: var(--light);
+}
+
+.select-box label {
+  cursor: pointer;
+}
+
+.select-box .option .radio {
+  display: none;
+}
+
+/*--------------------------------------------------------------
+# Button
+--------------------------------------------------------------*/
+
+.btn{
+  display: flex;
+  margin: 30px 0;
+}
+.button {
+  width: 170px;
+  height: 45px;
+  margin-right: 10px;
+  
+}
+
+.button input {
+  width: 170px;
+  height: 70%;
+  color: var(--light);
+  border-radius: 10px;
+  background-color: var(--mgreen);
+  box-shadow: 0 2px 10px 0 rgba(82, 121, 111, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+}
+
+.button input:hover {
+  background-color: var(--mlight);
+  color: var(--mdark);
+  cursor: pointer;
+}
+
+
+
+.clear {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+ 
+}
+.clear:hover {
+  opacity: 1;
+}
+.clear:before, .clear:after {
+  position: absolute;
+  margin: ;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: ' ';
+  height: 22px;
+  width: 2px;
+  background-color: var(--green);
+}
+.clear:before {
+  transform: rotate(45deg);
+}
+.clear:after {
+  transform: rotate(-45deg);
+}
+
+
+
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+
+main {
+  width: 100%;
+  height: 95%;
+  /* border: 1px solid red; */
+  overflow: auto;
+  display: flex;
+  justify-content:space-between ;
+  flex-wrap: wrap;
+
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+}
+
+
+
+/*--------------------------------------------------------------
+# API 
+--------------------------------------------------------------*/
+
+.picture {
+  width: 350px;
+  -webkit-box-shadow: 6px 5px 11px -5px rgba(82, 121, 111, 0.55);
+  box-shadow: 6px 5px 11px -5px rgba(82, 121, 111, 0.55);
+ 
+}
+
+.list-pic {
+  /* border: 1px solid red; */
+  position: relative;
+
+}
+
+.list {
+  width: 50%;
+  height: 50%;
+ 
+  /* border: 1px solid red; */
+
+}
+
+.list-group {
+  position: absolute;
+  bottom: 0%;
+  color: var(--light);
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  
+
+}
+
+.list-caption {
+  display: flex;
+  
+}
+
+
+@media (max-width: 992px) { 
+  body {
+    top: 40%;
+    padding: 10%;
+    width: 350px;
+    height: 500px;
+  }
+  .clear{
+   margin-left: 10%;
+  }
+ }
